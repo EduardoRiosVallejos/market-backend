@@ -4,6 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import java.util.List;
 
 
 @Entity
@@ -17,6 +18,10 @@ public class Categoria {
     private String description;
 
     private Boolean estado;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<Producto> produstos;
+
 
     public Integer getIdCategoria() {
         return IdCategoria;
