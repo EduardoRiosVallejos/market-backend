@@ -26,4 +26,5 @@ public class CompraProductoPK {
     public void setIdProducto(Integer idProducto) {
         this.idProducto = idProducto;
     }
+
 }

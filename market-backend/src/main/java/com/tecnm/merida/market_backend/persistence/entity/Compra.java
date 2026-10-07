@@ -81,4 +81,20 @@ public class Compra {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<CompraProducto> getProdustos() {
+        return produstos;
+    }
+
+    public void setProdustos(List<CompraProducto> produstos) {
+        this.produstos = produstos;
+    }
 }
