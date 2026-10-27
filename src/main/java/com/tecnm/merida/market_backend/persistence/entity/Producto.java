@@ -30,11 +30,11 @@ public class Producto {
     private Boolean estado;
 
     @ManyToOne
-    @JoinColumn(name = "id_categoria",insertable = false,updatable = false)
+    @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
     @OneToMany(mappedBy = "producto")
-    private List<CompraProducto> compraProductos;
+    private List<CompraProducto> compraProdcutos;
 
     public Integer getIdProducto() {
         return idProducto;
@@ -90,5 +90,21 @@ public class Producto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public List<CompraProducto> getCompraProdcutos() {
+        return compraProdcutos;
+    }
+
+    public void setCompraProdcutos(List<CompraProducto> compraProdcutos) {
+        this.compraProdcutos = compraProdcutos;
     }
 }

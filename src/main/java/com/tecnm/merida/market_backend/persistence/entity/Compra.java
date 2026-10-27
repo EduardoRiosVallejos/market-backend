@@ -1,7 +1,5 @@
 package com.tecnm.merida.market_backend.persistence.entity;
-
 import jakarta.persistence.*;
-
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -26,16 +24,15 @@ public class Compra {
 
     private String estado;
 
-    //Relacion con cliente;
-    //Mucho compras para un cliente
-
+    //Relación con el cliente
+    //Muchas compras para un cliente
     @ManyToOne
     @JoinColumn(name = "id_cliente", insertable = false, updatable = false)
     private Cliente cliente;
 
-    //Relacion con CompraProducto
+    //Relación con CompraProducto
     @OneToMany(mappedBy = "compra")
-    private List<CompraProducto> productos;
+    private List<CompraProducto> produstos;
 
     public Integer getIdCompra() {
         return idCompra;
@@ -83,5 +80,21 @@ public class Compra {
 
     public void setEstado(String estado) {
         this.estado = estado;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public List<CompraProducto> getProdustos() {
+        return produstos;
+    }
+
+    public void setProdustos(List<CompraProducto> produstos) {
+        this.produstos = produstos;
     }
 }
