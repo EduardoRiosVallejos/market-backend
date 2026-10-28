@@ -5,11 +5,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 import java.util.Optional;
 
-
-
-
-
-
 //Metodos abstractos que despues se implementan
 public interface ProductoCrudRepository extends CrudRepository<Producto, Integer> {
     /*SQL Query Method

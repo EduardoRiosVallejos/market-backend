@@ -66,6 +66,4 @@ public class Product {
     private boolean active;
     private Category category;
 
-
-
 }

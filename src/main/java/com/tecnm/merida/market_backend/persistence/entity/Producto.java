@@ -115,4 +115,5 @@ public class Producto {
     public void setIdCategoria(Integer idCategoria) {
         this.idCategoria = idCategoria;
     }
+
 }

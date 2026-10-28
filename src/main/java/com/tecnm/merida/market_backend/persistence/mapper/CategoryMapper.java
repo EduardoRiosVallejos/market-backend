@@ -18,4 +18,5 @@ public interface CategoryMapper {
     @InheritInverseConfiguration
     @Mapping(target = "estado", ignore = true)
     Categoria toCategoria(Category category);
+    
 }

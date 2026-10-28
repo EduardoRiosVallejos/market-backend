@@ -1,5 +1,4 @@
 package com.tecnm.merida.market_backend.persistence.entity;
-
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;

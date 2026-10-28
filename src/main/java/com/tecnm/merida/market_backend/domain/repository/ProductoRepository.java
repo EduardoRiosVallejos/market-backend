@@ -1,7 +1,5 @@
 package com.tecnm.merida.market_backend.domain.repository;
-
 import com.tecnm.merida.market_backend.domain.Product;
-
 import java.util.List;
 import java.util.Optional;
 
