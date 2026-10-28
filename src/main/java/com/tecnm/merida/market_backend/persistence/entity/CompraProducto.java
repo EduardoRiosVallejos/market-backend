@@ -11,7 +11,6 @@ public class CompraProducto {
 
     @EmbeddedId
     private CompraProductoPK id;
-
     private Integer cantidad;
     private Double total;
     private Boolean estado;
@@ -71,4 +70,5 @@ public class CompraProducto {
     public void setProducto(Producto producto) {
         this.producto = producto;
     }
+
 }

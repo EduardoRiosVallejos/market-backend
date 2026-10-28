@@ -12,7 +12,8 @@ import java.util.List;
 @Mapper(componentModel = "spring", uses = {CategoryMapper.class})
 public interface ProductMapper {
     @Mappings({
-            @Mapping(source = "idProducto", target = "productoId"),
+            @Mapping(source = "idProducto", target = "productId"),
+            @Mapping(source = "idCategoria", target = "categoryId"),
             @Mapping(source = "nombre", target = "name"),
             @Mapping(source = "precioVenta", target = "price"),
             @Mapping(source = "cantidadStock", target = "stock"),
@@ -25,5 +26,5 @@ public interface ProductMapper {
 
     @InheritInverseConfiguration
     @Mapping (target ="codigoBarras", ignore = true)
-    Producto toProducto(Producto producto);
+    Producto toProducto(Product product);
 }
