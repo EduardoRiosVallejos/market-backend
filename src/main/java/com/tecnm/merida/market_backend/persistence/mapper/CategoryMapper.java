@@ -1,8 +1,8 @@
+
 package com.tecnm.merida.market_backend.persistence.mapper;
 
 import com.tecnm.merida.market_backend.domain.Category;
 import com.tecnm.merida.market_backend.persistence.entity.Categoria;
-import com.tecnm.merida.market_backend.persistence.entity.Producto;
 import org.mapstruct.*;
 
 @Mapper(componentModel = "spring")
@@ -16,7 +16,6 @@ public interface CategoryMapper {
     Category toCategory(Categoria categoria);
 
     @InheritInverseConfiguration
-    @Mapping(target = "estado", ignore = true)
     Categoria toCategoria(Category category);
-    
+
 }

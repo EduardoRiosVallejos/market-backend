@@ -1,27 +1,25 @@
-package com.tecnm.merida.market_backend.persistence.entity;
-import jakarta.persistence.*;
-import jakarta.persistence.Column;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import java.util.List;
 
+package com.tecnm.merida.market_backend.persistence.entity;
+
+import jakarta.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "categorias")
 public class Categoria {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column (name = "id_categoria")
+    @Column(name = "id_categoria")
     private Integer IdCategoria;
 
+    @Column(name = "descripcion")
     private String description;
 
     private Boolean estado;
 
     @OneToMany(mappedBy = "categoria")
     private List<Producto> produstos;
-
 
     public Integer getIdCategoria() {
         return IdCategoria;

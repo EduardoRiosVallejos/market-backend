@@ -11,6 +11,7 @@ public interface ProductoRepository {
     Optional<List<Product>> getScarceProducts(int quantity);
     Optional<Product> getProduct(int productId);
     Product save(Product product);
+    Optional<Product> update(Product product);
 
 
     void delete(int productId);

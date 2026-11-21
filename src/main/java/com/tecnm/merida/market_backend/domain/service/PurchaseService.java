@@ -9,18 +9,34 @@ import java.util.Optional;
 
 @Service
 public class PurchaseService {
-    private PurchaseRepository purchaseRepository;
 
-    public List<Purchase> getAll(){
-        return purchaseRepository.getAll();
+    private final PurchaseRepository purchaseRepository;
 
+    public PurchaseService(PurchaseRepository purchaseRepository) {
+        this.purchaseRepository = purchaseRepository;
     }
 
-    public Optional<List<Purchase>> getByClient(String clientId){
+    public List<Purchase> getAll() {
+        return purchaseRepository.getAll();
+    }
+
+    public Optional<List<Purchase>> getByClient(String clientId) {
         return purchaseRepository.getByClient(clientId);
     }
 
-    public Purchase save(Purchase purchase){
+    public Optional<Purchase> getPurchase(Integer purchaseId) {
+        return purchaseRepository.getPurchase(purchaseId);
+    }
+
+    public Purchase save(Purchase purchase) {
         return purchaseRepository.save(purchase);
+    }
+
+    public Optional<Purchase> update(Purchase purchase) {
+        return purchaseRepository.update(purchase);
+    }
+
+    public void delete(Integer purchaseId) {
+        purchaseRepository.delete(purchaseId);
     }
 }

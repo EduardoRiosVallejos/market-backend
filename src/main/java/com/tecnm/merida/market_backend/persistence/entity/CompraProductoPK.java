@@ -3,8 +3,12 @@ package com.tecnm.merida.market_backend.persistence.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 
+import java.io.Serializable;
+import java.util.Objects;
+
 @Embeddable
-public class CompraProductoPK {
+public class CompraProductoPK implements Serializable {
+
     @Column(name = "id_compra")
     private Integer idCompra;
 
@@ -27,4 +31,19 @@ public class CompraProductoPK {
         this.idProducto = idProducto;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        CompraProductoPK that = (CompraProductoPK) o;
+
+        return Objects.equals(idCompra, that.idCompra)
+                && Objects.equals(idProducto, that.idProducto);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idCompra, idProducto);
+    }
 }
